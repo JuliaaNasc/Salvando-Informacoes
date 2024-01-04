@@ -1,16 +1,2 @@
-# salvando_informacoes
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Salvando-Informacoes
+O projeto está sendo criado com o intuito de ter campos para o usuário preencher devidas informações, com um botão de "Salvar". O resultado após apertar nesse botão será a junção das devias informações preenchidas nos campos a cima.

@@ -12,12 +12,48 @@ class _MainScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Expanded(child: SizedBox()),
+            const Text(
+              'PREENCHA O CAMPO ABAIXO: ',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 25),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 221, 201, 201),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(),
+              ),
+            ),
+            const Text(
+              'PREENCHA O CAMPO ABAIXO: ',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 221, 201, 201),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(),
+              ),
+            ),
+            SizedBox(height: 30),
             ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.red),
+              ),
               onPressed: () {
                 setState(() {
                   texto = '( ESCREVA AQUI A SUA MENSAGEM )';
@@ -25,17 +61,21 @@ class _MainScreenState extends State<WelcomeScreen> {
               },
               child: const Text(
                 ' HELLO WORLD . . .',
-                style: TextStyle(fontSize: 30),
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
               ),
             ),
-            SizedBox(height: 10),
             Text(
               texto,
               style: const TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
+            Expanded(child: SizedBox()),
+            Image.asset('assets/wave/wave_red.png'),
           ],
         ),
       ),

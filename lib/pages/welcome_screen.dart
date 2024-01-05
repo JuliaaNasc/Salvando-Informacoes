@@ -10,7 +10,7 @@ class WelcomeScreen extends StatelessWidget {
     Future.delayed(
       Duration(seconds: 10),
       () {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (c) {

@@ -12,6 +12,7 @@ class _MainScreenState extends State<MainScreen> {
   String texto = '';
   TextEditingController resultado1 = TextEditingController();
   TextEditingController resultado2 = TextEditingController();
+  String mensagem = '';
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 15),
             ElevatedButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.purple),
@@ -78,7 +79,7 @@ class _MainScreenState extends State<MainScreen> {
                       texto =
                           'Foi adquirido as informações ${resultado1.text.toUpperCase()} e ${resultado2.text.toUpperCase()}';
                     } else {
-                      texto = 'NENHUM TEXTO ENCONTRADO';
+                      mensagem = 'NENHUM TEXTO ENCONTRADO';
                     }
                   },
                 );
@@ -94,12 +95,23 @@ class _MainScreenState extends State<MainScreen> {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5, 10, 5, 0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: Text(
                     texto,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                  child: Text(
+                    mensagem,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: Colors.red,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -16,7 +16,7 @@ class _MainScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/wave/wave_red_total.png'),
+            Image.asset('assets/wave/wave_purple_total.png'),
             Expanded(child: SizedBox()),
 
             
@@ -55,7 +55,7 @@ class _MainScreenState extends State<WelcomeScreen> {
             SizedBox(height: 30),
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red),
+                backgroundColor: MaterialStateProperty.all(Colors.purple),
               ),
               onPressed: () {
                 setState(() {
@@ -79,7 +79,7 @@ class _MainScreenState extends State<WelcomeScreen> {
               ),
             ),
             Expanded(child: SizedBox()),
-            Image.asset('assets/wave/wave_red_total.png'),
+            Image.asset('assets/wave/wave_purple_total.png'),
           ],
         ),
       ),

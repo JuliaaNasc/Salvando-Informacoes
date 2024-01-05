@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
-  @override
-  State<WelcomeScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<WelcomeScreen> {
-  String texto = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,70 +11,16 @@ class _MainScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/wave/wave_purple_total.png'),
-            Expanded(child: SizedBox()),
-
-            
-            const Text(
-              'PREENCHA O CAMPO ABAIXO: ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              children: [
+                Center(child: Expanded(child: SizedBox())),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 20, 25),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 221, 201, 201),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: TextField(),
-              ),
+            SizedBox(
+              height: 10,
+              child: Lottie.asset('assets/animations/Animation - Cat.json'),
             ),
-            const Text(
-              'PREENCHA O CAMPO ABAIXO: ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 221, 201, 201),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: TextField(),
-              ),
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.purple),
-              ),
-              onPressed: () {
-                setState(() {
-                  texto = '( ESCREVA AQUI A SUA MENSAGEM )';
-                });
-              },
-              child: const Text(
-                ' HELLO WORLD . . .',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              texto,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Expanded(child: SizedBox()),
-            Image.asset('assets/wave/wave_purple_total.png'),
+            Image.asset('assets/wave/wave_purple_esquerda.png'),
           ],
         ),
       ),

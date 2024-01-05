@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
-  State<WelcomeScreen> createState() => _MainScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<WelcomeScreen> {
+class _MainScreenState extends State<MainScreen> {
   String texto = '';
   @override
   Widget build(BuildContext context) {

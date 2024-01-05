@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salvando_informacoes/main_screen/welcome_screen.dart';
+import 'package:salvando_informacoes/pages/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: MainScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

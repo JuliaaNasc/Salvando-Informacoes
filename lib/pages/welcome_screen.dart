@@ -31,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
               Expanded(child: SizedBox()),
               SizedBox(
                 height: 270,
-                child: Lottie.asset('assets/animations/animation_cat.json'),
+                child: Lottie.asset('assets/animations/animation_cat_01.json'),
               ),
               SizedBox(
                 height: 100,

@@ -16,7 +16,10 @@ class _MainScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset('assets/wave/wave_red_total.png'),
             Expanded(child: SizedBox()),
+
+            
             const Text(
               'PREENCHA O CAMPO ABAIXO: ',
               style: TextStyle(
@@ -67,6 +70,7 @@ class _MainScreenState extends State<WelcomeScreen> {
                 ),
               ),
             ),
+            SizedBox(height: 10),
             Text(
               texto,
               style: const TextStyle(
@@ -75,7 +79,7 @@ class _MainScreenState extends State<WelcomeScreen> {
               ),
             ),
             Expanded(child: SizedBox()),
-            Image.asset('assets/wave/wave_red.png'),
+            Image.asset('assets/wave/wave_red_total.png'),
           ],
         ),
       ),

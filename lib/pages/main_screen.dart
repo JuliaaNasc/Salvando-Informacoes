@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:salvando_informacoes/pages/page_new.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -30,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
               SizedBox(height: 10),
               const Text(
-                'PREENCHA O CAMPO ABAIXO: ',
+                'Escreva seu nome no campo abaixo: ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
@@ -49,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
               const Text(
-                'PREENCHA O CAMPO ABAIXO: ',
+                'Preencha com uma frase que for do seu interese: ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
@@ -68,61 +69,96 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
               SizedBox(height: 15),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.purple),
-                ),
-                onPressed: () {
-                  setState(
-                    () {
-                      if (resultado1.text != '' && resultado2.text.isNotEmpty) {
-                        texto =
-                            'Foi adquirido as informações ${resultado1.text.toUpperCase()} e ${resultado2.text.toUpperCase()}';
-                        mensagem = '';
-                      } else {
-                        mensagem = 'NENHUM TEXTO ENCONTRADO';
-                        texto = '';
-                      }
-                    },
-                  );
-                },
-                child: const Text(
-                  ' HELLO WORLD . . .',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.purple),
+                        ),
+                        onPressed: () {
+                          setState(
+                            () {
+                              if (resultado1.text != '' &&
+                                  resultado2.text.isNotEmpty) {
+                                texto =
+                                    'Foi adquirido as informações ${resultado1.text.toUpperCase()} e ${resultado2.text.toUpperCase()}';
+                                mensagem = '';
+                              } else {
+                                mensagem =
+                                    'Nenhum texto encontrato nos campos acima';
+                                texto = '';
+                              }
+                            },
+                          );
+                        },
+                        child: const Text(
+                          'Salvar',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.purple),
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (c) {
+                                return PageNew();
+                              },
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Pular',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
+                ],
               ),
               Column(
                 children: [
                   if (texto != '')
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(5, 10, 5, 0),
-                    child: Text(
-                      texto,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(5, 10, 5, 0),
+                      child: Text(
+                        texto,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
-                  ),
-                   if(mensagem != '')
-                  Padding(
-                   
-                    padding: const EdgeInsets.fromLTRB(5, 10, 5, 0),
-                    child: Text(
-                      mensagem,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                  if (mensagem != '')
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(5, 10, 5, 0),
+                      child: Text(
+                        mensagem,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
-                  ),
                 ],
               ),
               Image.asset('assets/wave/wave_purple_total.png'),
